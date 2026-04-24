@@ -45,8 +45,8 @@ order by averge_income asc;
 --query day_of_the_week_income
 SELECT 
 CONCAT(emp.first_name, ' ', emp.last_name) as seller, --concatenar nombre
-TRIM(TO_CHAR(sal.sale_date,  'Day')) AS day_of_week, -- sacar cada dia de la semana 
-FLOOR(SUM(sal.quantity* pro.price)) as incon -- sumar ventas de ese dia
+TRIM(TO_CHAR(sal.sale_date,  'day')) AS day_of_week, -- sacar cada dia de la semana 
+FLOOR(SUM(sal.quantity* pro.price)) as income -- sumar ventas de ese dia
 --union de tablas y alias
 FROM employees as emp
 join sales as sal on sal.sales_person_id = emp.employee_id 
