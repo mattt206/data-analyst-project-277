@@ -18,7 +18,7 @@ limit 10;
 --query lowest_average_income.csv
 with tab as(
 SELECT 
-FLOOR(SUM(pro.price * sal.quantity)) as total_ventas_emp --sumatoria de venta total x cada empleado
+FLOOR(AVG(pro.price * sal.quantity)) as total_ventas_emp --sumatoria de venta total x cada empleado
 FROM employees as emp
 join sales as sal on sal.sales_person_id = emp.employee_id 
 join products as pro on sal.product_id = pro.product_id 
