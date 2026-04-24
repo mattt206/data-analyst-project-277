@@ -29,7 +29,7 @@ SELECT
 -- concatenar nombre y apellido
 CONCAT(emp.first_name, ' ', emp.last_name) as seller,
 --funcion FLOOR que redondea hacia abajo, SUMATORIA de las ventas de cada empleado 
-FLOOR(SUM(pro.price * sal.quantity)) as income
+FLOOR(AVG(pro.price * sal.quantity)) as income
 --seleccion de tabla primaria para esta query y uniones con su respectivo alias usando las claves primarias de cada tabla
 FROM employees as emp
 join sales as sal on sal.sales_person_id = emp.employee_id 
