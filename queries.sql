@@ -79,7 +79,7 @@ select '40+' as age_category, count(age) as age_count from gr3
 select  
 TO_CHAR(sal.sale_date,  'YYYY-MM') AS selling_month, --segmentar la fechas usando funcion to char
 count(distinct customer_id) as total_customers, --contar total de clientes unicos por mes
-sum(sal.quantity * pro.price) as income --sumatoria de las ganancias por mes
+FLOOR(sum(sal.quantity * pro.price)) as income --sumatoria de las ganancias por mes
 from sales as sal
 join products as pro on pro.product_id = sal.product_id 
 --where sal.customer_id = 4341
